@@ -1,16 +1,9 @@
 #!/usr/bin/env python
 import os
 import sys
-from os import path
-
-if path.exists("env.py"):
-    import env
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get['SECRET_KEY']
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "my_project.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_todo.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError:
