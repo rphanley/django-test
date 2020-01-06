@@ -8,5 +8,8 @@ class Item(models.Model):
     done = models.BooleanField(blank=False, default=False)
 
 
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
+
+    
+
