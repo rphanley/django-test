@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'a#l!yei)^hwyhc8owk_6_i5(p!v-f=$ds41a01es8un5l2d9fg'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
@@ -88,7 +88,8 @@ if development:
         }
     }
 else:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
